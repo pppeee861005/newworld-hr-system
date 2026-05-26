@@ -93,8 +93,8 @@ claude
 ### 2. 複製本倉庫
 
 ```bash
-git clone https://github.com/pppeee861005/gws-hr-automation.git
-cd newworld-hr-system-v2
+git clone https://github.com/pppeee861005/newworld-hr-system.git
+cd newworld-hr-system
 ```
 
 ### 3. 配置環境
@@ -266,8 +266,8 @@ v2.0 歡迎社群貢獻：
 
 ## 📞 支持與聯繫
 
-- **GitHub Issues**：https://github.com/pppeee861005/gws-hr-automation/issues
-- **Discussions**：https://github.com/pppeee861005/gws-hr-automation/discussions
+- **GitHub Issues**：https://github.com/pppeee861005/newworld-hr-system/issues
+- **Discussions**：https://github.com/pppeee861005/newworld-hr-system/discussions
 - **Substack**：https://substack.com/@aiagentcommander
 
 ---
