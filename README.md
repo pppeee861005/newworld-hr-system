@@ -1,3 +1,7 @@
+#本案也是dynamic workflows的既是workflow腳本的開發也是dynamic workflows的實戰。
+也就是說用dynamic workflows。來開發這個腳本。
+#這是v2版本, 強調使用框架是dynamic workflows, 本案只開發腳本 workflows .js
+
 # 計劃 5：企業級 AI HR 自動化系統
 
 **計劃代碼**：Plan-5-EnterpriseHR-Workflow
