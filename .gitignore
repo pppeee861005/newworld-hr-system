@@ -1,0 +1,165 @@
+# ===================================
+# 新世界 HR 系統 v2.0 - Git 忽略清單
+# ===================================
+
+# ===================================
+# 環境變量與機密文件
+# ===================================
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+service-account.json
+secrets/
+
+# ===================================
+# Node.js 依賴
+# ===================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ===================================
+# 構建產物
+# ===================================
+dist/
+build/
+out/
+*.js.map
+*.d.ts.map
+
+# ===================================
+# 測試與覆蓋率報告
+# ===================================
+coverage/
+.nyc_output/
+*.lcov
+test-results/
+.jest/
+
+# ===================================
+# 日誌文件
+# ===================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===================================
+# IDE 與編輯器配置
+# ===================================
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ===================================
+# Claude Code 本地配置
+# ===================================
+.claude/settings.local.json
+.claude/.session/
+.claude/cache/
+
+# ===================================
+# 操作系統相關
+# ===================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+# ===================================
+# 臨時文件
+# ===================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.cache/
+tmp/
+temp/
+
+# ===================================
+# 備份文件
+# ===================================
+*.bak
+*.backup
+*.old
+*.orig
+
+# ===================================
+# Google Workspace 相關
+# ===================================
+# 本地測試用的 token 和憑證
+token.json
+oauth2_credentials.json
+
+# ===================================
+# Workflow 執行日誌（本地）
+# ===================================
+workflows/executed/*.log
+workflows/logs/
+
+# ===================================
+# 數據庫與緩存
+# ===================================
+*.db
+*.sqlite
+*.sqlite3
+.cache/
+
+# ===================================
+# Docker 相關（如未來使用）
+# ===================================
+.docker/
+docker-compose.override.yml
+
+# ===================================
+# 其他
+# ===================================
+.eslintcache
+.stylelintcache
+.parcel-cache/
