@@ -1,0 +1,48 @@
+{
+  "name": "newworld-hr-system-v2",
+  "version": "2.0.0-alpha",
+  "description": "Enterprise AI HR Automation System with Claude Code Workflow",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:unit": "jest tests/unit --coverage",
+    "test:integration": "jest tests/integration",
+    "test:e2e": "jest tests/e2e",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write src/**/*.js docs/**/*.md",
+    "dev": "NODE_ENV=development node src/index.js",
+    "workflow:leave": "node scripts/run-workflow.js --workflow leave_approval",
+    "workflow:expense": "node scripts/run-workflow.js --workflow expense_report",
+    "workflow:training": "node scripts/run-workflow.js --workflow training_request",
+    "docs": "node scripts/generate-docs.js"
+  },
+  "keywords": [
+    "hr",
+    "automation",
+    "workflow",
+    "claude",
+    "ai",
+    "google-workspace"
+  ],
+  "author": "AI Agent Commander",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "googleapis": "^118.0.0",
+    "@anthropic-ai/sdk": "^0.20.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.1",
+    "@babel/preset-env": "^7.23.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

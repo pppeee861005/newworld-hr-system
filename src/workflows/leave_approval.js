@@ -14,7 +14,7 @@ const { googleWorkspaceAPI } = require('../utils/googleWorkspaceAPI')
 // Workflow 元數據
 // ============================================================================
 
-export const meta = {
+const meta = {
   name: '請假審批工作流',
   description: '處理員工請假申請，包括政策檢查、法規驗證、衝突管理',
   version: 'v2.0-alpha',
@@ -126,20 +126,29 @@ async function executeLeaveApproval(params = {}) {
     const [policyCheck, complianceCheck] = await Promise.all([
       // 子任務 A：政策檢查
       executeSubWorkflow('checkPolicy', {
-        employee_id: dataCollected.employee_id,
-        leave_type: dataCollected.leave_type,
-        days: dataCollected.days,
-        start_date: dataCollected.start_date,
-        end_date: dataCollected.end_date,
+        employeeId: dataCollected.employee_id,
+        leaveData: {
+          leave_type: dataCollected.leave_type,
+          days: dataCollected.days,
+          start_date: dataCollected.start_date,
+          end_date: dataCollected.end_date,
+          application_date: new Date().toISOString().split('T')[0],
+          reason: dataCollected.reason
+        },
         workflowId
       }),
 
       // 子任務 B：法規檢查
       executeSubWorkflow('checkCompliance', {
-        employee_id: dataCollected.employee_id,
-        leave_type: dataCollected.leave_type,
-        days: dataCollected.days,
-        location: getFormField('employee_location') || 'California',
+        employeeId: dataCollected.employee_id,
+        leaveData: {
+          leave_type: dataCollected.leave_type,
+          days: dataCollected.days,
+          start_date: dataCollected.start_date,
+          end_date: dataCollected.end_date,
+          application_date: new Date().toISOString().split('T')[0]
+        },
+        employeeLocation: getFormField('employee_location') || 'California',
         workflowId
       })
     ])
@@ -460,9 +469,11 @@ function phase(name) {
 // 匯出
 // ============================================================================
 
-export async function execute(params = {}) {
+async function execute(params = {}) {
   return await executeLeaveApproval(params)
 }
+
+module.exports = { execute, meta }
 
 // 當直接運行此文件時（用於測試）
 if (require.main === module) {
